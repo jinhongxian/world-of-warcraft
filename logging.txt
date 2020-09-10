@@ -1,0 +1,14 @@
+if (LoggingCombat()) then
+    LoggingCombat(false);
+  DEFAULT_CHAT_FRAME:AddMessage("CombatLogging End");
+else
+  DEFAULT_CHAT_FRAME:AddMessage("CombatLogging Start");
+  LoggingCombat(true);
+end
+
+
+/combatlog
+/script local a=LoggingCombat(LoggingCombat()==nil); UIErrorsFrame:AddMessage("CombatLogging is now "..tostring(a and "ON" or "OFF"),1,0,0);
+
+
+/run if (LoggingCombat()) then print("CombatLogging End");LoggingCombat(false);else print("CombatLogging Start");LoggingCombat(true);end

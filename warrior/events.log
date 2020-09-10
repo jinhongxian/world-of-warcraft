@@ -1,0 +1,65 @@
+20:01:53 SPELL_DAMAGE false      Player-729-05121D04 卢伽尔班达 1297      0          Creature-0-3906-1643-12445-126781-000047311C 训练假人  2600      0         6343 雷霆一击 1   16343 -1   1     nil  nil  nil
+         eventType,   hideCaster, srcGUID,           srcName,  srcFlags, srcFlags2, dstGUID,                                     dstName, dstFlags, dstFlags2,a12,  a13,   a14, a15,  a16, a17, a18, a19, a20
+
+
+SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3048-1643-26096-126781-0000472E4C 训练假人 2600 0 317159 暮光毁灭 32 56531 -1 32 nil nil nil
+SPELL_PERIODIC_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3048-1643-26096-126781-0000472E4C 训练假人 2600 0 115767 重伤 1 3888 -1 1 nil nil nil
+
+
+
+22:55:27 SPELL_CAST_SUCCESS false Player-729-05121D04 卢伽尔班达 1297 0  nil -2147483648 -2147483648 6343 雷霆一击 1 nil nil nil nil nil nil
+22:55:40 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+22:55:27 SPELL_ENERGIZE false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 6343 雷霆一击 1 5 0 1 nil nil nil
+22:55:35 SPELL_AURA_APPLIED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+22:55:30 SPELL_AURA_REFRESH false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 319237 坚忍之力 1 BUFF nil nil nil nil nil
+22:55:35 SPELL_CAST_SUCCESS false Player-729-05121D04 卢伽尔班达 1297 0  nil -2147483648 -2147483648 23920 法术反射 1 nil nil nil nil nil nil
+22:55:40 SPELL_AURA_REFRESH false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 319237 坚忍之力 1 BUFF nil nil nil nil nil
+22:55:35 SPELL_AURA_REFRESH false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 319237 坚忍之力 1 BUFF nil nil nil nil nil
+
+22:56:47 SPELL_AURA_REFRESH false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 319237 坚忍之力 1 BUFF nil nil nil nil nil
+22:56:47 SPELL_AURA_APPLIED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+22:56:41 SPELL_AURA_REFRESH false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 319237 坚忍之力 1 BUFF nil nil nil nil nil
+22:56:47 SPELL_CAST_SUCCESS false Player-729-05121D04 卢伽尔班达 1297 0  nil -2147483648 -2147483648 23920 法术反射 1 nil nil nil nil nil nil
+22:56:53 SPELL_AURA_REFRESH false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 319237 坚忍之力 1 BUFF nil nil nil nil nil
+22:56:52 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+
+23:49:13 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D98 训练假人 2600 0 6343 雷霆一击 1 15758 -1 1 nil nil nil
+23:49:11 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D98 训练假人 2600 0 6343 雷霆一击 1 31910 -1 1 nil nil nil
+23:49:11 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000C72D96 训练假人 2600 0 6343 雷霆一击 1 15642 -1 1 nil nil nil
+23:49:06 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D96 训练假人 68136 0 6343 雷霆一击 1 16374 -1 1 nil nil nil
+23:49:11 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D96 训练假人 68136 0 6343 雷霆一击 1 15642 -1 1 nil nil nil
+23:49:13 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D96 训练假人 68136 0 6343 雷霆一击 1 15758 -1 1 nil nil nil
+23:49:06 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000C72D96 训练假人 2600 0 6343 雷霆一击 1 8026 -1 1 nil nil nil
+23:49:09 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000C72D96 训练假人 2600 0 6343 雷霆一击 1 15436 -1 1 nil nil nil
+23:49:06 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D98 训练假人 2600 0 6343 雷霆一击 1 8027 -1 1 nil nil nil
+23:49:09 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D96 训练假人 68136 0 6343 雷霆一击 1 31489 -1 1 nil nil nil
+23:49:13 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000C72D96 训练假人 2600 0 6343 雷霆一击 1 15758 -1 1 nil nil nil
+23:49:06 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D96 训练假人 68136 0 6343 雷霆一击 1 16374 -1 1 nil nil nil
+23:49:09 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000472D98 训练假人 2600 0 6343 雷霆一击 1 15435 -1 1 nil nil nil
+23:49:06 SPELL_DAMAGE false Player-729-05121D04 卢伽尔班达 1297 2 Creature-0-3907-1643-21117-126781-0000C72D96 训练假人 2600 0 6343 雷霆一击 1 8026 -1 1 nil nil nil
+
+23:20:53 SPELL_ABSORBED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-0431488B 古灵紫雲 66888 0 5176 阳炎之怒 8 Player-729-0431488B 古灵紫雲 66888 0 296003 坚壁结界
+23:20:50 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-0431488B 古灵紫雲 66888 0 147833 援护 1 BUFF nil nil nil nil nil
+23:20:55 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 213915 群体反射 1 BUFF nil nil nil nil nil
+23:20:52 SPELL_CAST_SUCCESS false Player-729-05121D04 卢伽尔班达 1297 0  nil -2147483648 -2147483648 213915 群体反射 1 nil nil nil nil nil nil
+
+23:20:55 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 213915 群体反射 1 BUFF nil nil nil nil nil
+
+23:33:32 SPELL_AURA_APPLIED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+23:33:32 SPELL_CAST_SUCCESS false Player-729-05121D04 卢伽尔班达 1297 0  nil -2147483648 -2147483648 23920 法术反射 1 nil nil nil nil nil nil
+23:33:37 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+
+23:34:37 SPELL_CAST_START false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0  nil -2147483648 -2147483648 257063 盐渍飞弹 8 nil nil nil nil nil nil
+23:34:41 SPELL_DAMAGE false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 Player-729-05121D04 卢伽尔班达 1297 0 257063 盐渍飞弹 8 46939 -1 8 nil nil nil
+23:34:40 SPELL_CAST_SUCCESS false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 Player-729-05121D04 卢伽尔班达 1297 0 257063 盐渍飞弹 8 nil nil nil nil nil nil
+23:34:41 SPELL_DAMAGE false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 Player-729-05121D04 卢伽尔班达 1297 0 257063 盐渍飞弹 8 46939 -1 8 nil nil nil
+23:34:42 SPELL_CAST_START false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0  nil -2147483648 -2147483648 257063 盐渍飞弹 8 nil nil nil nil nil nil
+
+23:34:44 SPELL_AURA_APPLIED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+23:34:44 SPELL_CAST_SUCCESS false Player-729-05121D04 卢伽尔班达 1297 0  nil -2147483648 -2147483648 23920 法术反射 1 nil nil nil nil nil nil
+23:34:46 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+23:34:46 SPELL_MISSED false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 Player-729-05121D04 卢伽尔班达 1297 0 257063 盐渍飞弹 8 REFLECT false nil nil nil nil
+23:34:46 SPELL_AURA_REMOVED false Player-729-05121D04 卢伽尔班达 1297 0 Player-729-05121D04 卢伽尔班达 1297 0 23920 法术反射 1 BUFF nil nil nil nil nil
+23:34:47 SPELL_DAMAGE false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 257063 盐渍飞弹 8 48998 -1 8 nil nil nil
+
+23:34:48 SPELL_AURA_APPLIED false Creature-0-3905-1822-27003-129370-0000CD3553 铁潮塑浪者 68168 0 Creature-0-3905-1822-27003-129369-0000CD3553 铁潮袭击者 2632 0 256957 防水甲壳 1 BUFF nil nil nil nil nil
