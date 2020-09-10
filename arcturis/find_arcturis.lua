@@ -18,9 +18,10 @@ function(table,event,unit)
         local type, zero, server_id, instance_id, zone_uid, npc_id, spawn_uid = strsplit("-",guid);
         if type == "Creature" then 
             if name == "阿克图瑞斯" then
-                print(guid, name)
+                print("==> ",guid,name)
                 find_arcturis:Disable()
             else
+                print(guid,name)
                 find_arcturis:Enable()
             end
         end

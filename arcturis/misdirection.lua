@@ -1,33 +1,39 @@
 ------------------------------------------------
 -- 误导
 -- Create the macro to use
+-- party1
+aura_env.party_finder = "party1"
+-- party1target
+aura_env.party_finder_target = string.format("%starget",aura_env.party_finder)
+aura_env.party_client = "party2"
+
+
 aura_env.macro_nocombat_text = [[
 /cast [nocombat] !假死
 /cast [nocombat] !伪装
 ]]
-aura_env.macro_threat_text = [[
-/target party4target
-/cast [@party3] 误导
+
+aura_env.macro_threat_text = string.format([[
+/target %s
+/cast [@%s] 误导
 /cast 反制射击
-/castsequence reset=600 稳固射击, 狂怒战鼓, 稳固射击, 稳固射击
-]]
+/castsequence reset=600 稳固射击, 狂怒战鼓, 急速射击, 稳固射击
+]],aura_env.party_finder_target,aura_env.party_client)
+
 local anti_shoot = anti_shoot or CreateFrame("Button", "anti_shoot", UIParent, "SecureActionButtonTemplate")
 anti_shoot:SetAttribute("type", "macro") 
 anti_shoot:SetAttribute("macrotext", aura_env.macro_nocombat_text)
 
 -- UNIT_TARGET
 function(table,event,unit)
-    if unit == "party4" then
-        local guid, name = UnitGUID("target"), UnitName("target")
+    if unit == aura_env.party_finder then
+        local guid, name = UnitGUID(aura_env.party_finder_target), UnitName(aura_env.party_finder_target)
         print(unit, guid, name)
         local type, zero, server_id, instance_id, zone_uid, npc_id, spawn_uid = strsplit("-",guid);
-        if type == "Creature" then 
-            if name == "阿克图瑞斯" then
-                print("---------->")
-                anti_shoot:SetAttribute("macrotext", aura_env.macro_threat_text)
-            else
-                anti_shoot:SetAttribute("macrotext", aura_env.macro_nocombat_text)
-            end
+        if type == "Creature" and name == "阿克图瑞斯" then
+            anti_shoot:SetAttribute("macrotext", aura_env.macro_threat_text)
+        else
+            anti_shoot:SetAttribute("macrotext", aura_env.macro_nocombat_text)
         end
     end
 end
@@ -35,19 +41,23 @@ end
 ------------------------------------------------
 -- 英勇
 -- Create the macro to use
-aura_env.macro_threat_text = [[
-/target party4target
-/cast [@party3] 误导
+aura_env.plater_name = UnitName("player")
+-- party1
+aura_env.party_finder = "party1"
+-- party1target
+aura_env.party_finder_target = string.format("%starget",aura_env.party_finder)
+aura_env.party_client = "party2"
+aura_env.macro_threat_text = string.format([[
+/target %s
+/cast [@%s] 误导
 /cast 反制射击
-/cast 稳固射击
-]]
-
+/cast 稳固射击  
+]],aura_env.party_finder_target,aura_env.party_client)
 -- COMBAT_LOG_EVENT_UNFILTERED 
 function(event, ...)
 	local timestamp, subevent, _, sourceGUID, sourceName, sourceFlags, sourceRaidFlags, destGUID, destName, destFlags, destRaidFlags = ...
 	local spellId, spellName, spellSchool = select(12, ...)
-    local playerName = "Micarelli"
-	if subevent == "SPELL_CAST_SUCCESS" and sourceName == playerName and spellName == "狂怒战鼓" then
+	if subevent == "SPELL_CAST_SUCCESS" and sourceName == aura_env.plater_name and spellName == "狂怒战鼓" then
         print("----------> Fire Mode")
         anti_shoot:SetAttribute("macrotext", aura_env.macro_threat_text)
     end
