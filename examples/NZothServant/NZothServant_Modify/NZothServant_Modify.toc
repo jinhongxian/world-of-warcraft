@@ -1,0 +1,10 @@
+## Interface: 80300
+## Title: NZothServant
+## Author: JANY
+## Version: 8.3.0
+## Notes: NZothServant恩佐斯的仆从
+## SavedVariables:NZothServantDB
+
+
+
+NZothServant_Modify.lua

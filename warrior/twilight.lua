@@ -1,5 +1,5 @@
 -- Init
-chat_types = { "SAY", "YELL", "PARTY", "GUILD", "RAID" }
+chat_types = { "SAY", "YELL", "PARTY", "GUILD", "RAID", "EMOTE" }
 languages = { "chinese", "english" }
 
 aura_env.player_name = GetUnitName("player", false)
@@ -16,7 +16,7 @@ if aura_env.language == "chinese" then
     aura_env.chat_unit_scale = 0.0001
     aura_env.chat_unit = "万"
 else
-    aura_env.chat_cast_success = "Fire all!!!"
+    aura_env.chat_cast_success = "Fire !!!"
     aura_env.chat_report_1 = " -> Attacked "
     aura_env.chat_report_2 = "targets, Damage: "
     aura_env.chat_unit_scale = 0.001
