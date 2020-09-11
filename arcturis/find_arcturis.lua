@@ -1,14 +1,13 @@
 -- Create the macro to use
 
 aura_env.macro_text = [[
-/cleartarget
+/cast !影遁
 /targetenemy
 ]]
 
 local find_arcturis = find_arcturis or CreateFrame("Button", "find_arcturis", UIParent, "SecureActionButtonTemplate")
 find_arcturis:SetAttribute("type", "macro") 
 find_arcturis:SetAttribute("macrotext", aura_env.macro_text)
-
 
 
 -- UNIT_TARGET

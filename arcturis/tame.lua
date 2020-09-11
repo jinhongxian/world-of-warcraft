@@ -1,34 +1,37 @@
-------------------------------------------------
 -- 驯服
--- party1
-aura_env.party_finder = "party1"
--- party1target
-aura_env.party_finder_target = string.format("%starget",aura_env.party_finder)
+aura_env.beast = "阿克图瑞斯"
 -- Create the macro to use
-aura_env.macro_nocombat_text = [[
+aura_env.macro_1_text = [[
+/cast [pet] 解散宠物
+/targetenemy
 /cast [nocombat] !假死
 /cast [nocombat] !伪装
 ]]
-aura_env.macro_tame_text = string.format([[
-/target %s
+
+aura_env.macro_2_text = [[
+/stopattack
 /cast 反制射击
-/cast 驯服野兽
-]], aura_env.party_finder_target)
+/stopattack
+/cast [nopet] 驯服野兽
+/cast [pet] 解散宠物
+]]
+
 local tame_beast = tame_beast or CreateFrame("Button", "tame_beast", UIParent, "SecureActionButtonTemplate")
 tame_beast:SetAttribute("type", "macro") 
-tame_beast:SetAttribute("macrotext", aura_env.macro_nocombat_text)
+tame_beast:SetAttribute("macrotext", aura_env.macro_1_text)
 
 -- UNIT_TARGET
 function(table,event,unit)
-    if unit == aura_env.party_finder then
-        local guid, name = UnitGUID(aura_env.party_finder_target), UnitName(aura_env.party_finder_target)
-        print(unit, guid, name)
+    if unit == "player" then
+        local guid, name = UnitGUID("target"), UnitName("target")
         local type, zero, server_id, instance_id, zone_uid, npc_id, spawn_uid = strsplit("-",guid);
-        if type == "Creature" and name == "阿克图瑞斯" then
-            print("---------->")
-            tame_beast:SetAttribute("macrotext", aura_env.macro_tame_text)
-        else
-            tame_beast:SetAttribute("macrotext", aura_env.macro_nocombat_text)
+        if type == "Creature" and name == aura_env.beast then
+            print(unit, guid, name)
+            tame_beast:SetAttribute("macrotext", aura_env.macro_2_text)
+            return
         end
+    end
+    if not UnitAffectingCombat("player") then
+        tame_beast:SetAttribute("macrotext", aura_env.macro_1_text)
     end
 end
