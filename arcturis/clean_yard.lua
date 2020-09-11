@@ -4,14 +4,10 @@
 aura_env.macro_1_text = [[
 /run StartDuel("party1")
 /targetenemy
-/cast [nocombat] !假死
-/stopattack
-/cast [@focus] 压制
-/stopattack
+/cast 荣誉旗帜
 ]]
 
 aura_env.macro_2_text = [[
-/run StartDuel("party1")
 /stopattack
 /cast 毒蛇钉刺
 /stopattack
@@ -24,7 +20,6 @@ aura_env.macro_3_text = string.format([[
 /stopattack
 /cast 反制射击
 /stopattack
-/cast 震荡射击
 ]],aura_env.party_client)
 
 local clean_yard = clean_yard or CreateFrame("Button", "clean_yard", UIParent, "SecureActionButtonTemplate")
@@ -36,11 +31,11 @@ function(table,event,unit)
     if unit == "player" then
         local guid, name = UnitGUID("target"), UnitName("target")
         local type, zero, server_id, instance_id, zone_uid, npc_id, spawn_uid = strsplit("-",guid);
-        if type == "Creature" and name == "耸角雄鹿" then 
+        if type == "Creature" and (name == "耸角雄鹿" or name == "灰鬃熊")then 
             clean_yard:SetAttribute("macrotext", aura_env.macro_2_text)
-        elseif type == "Vehicle" and name == "灰鬃熊" then
-            clean_yard:SetAttribute("macrotext", aura_env.macro_2_text)
+
         elseif type == "Creature" and name == "阿克图瑞斯" then
+            print(event,guid, name)
             clean_yard:SetAttribute("macrotext", aura_env.macro_3_text)
         else
             clean_yard:SetAttribute("macrotext", aura_env.macro_1_text)
@@ -51,33 +46,47 @@ end
 
 -- 陷阱
 -- Create the macro to use
-aura_env.macro_1_text = [[
-]]
-aura_env.macro_2_text = [[
-/run StartDuel("party1")
+aura_env.macro_Wana = [[
 /cast [@cursor] 冰冻陷阱
 ]]
-local wana = wana or CreateFrame("Button", "wana", UIParent, "SecureActionButtonTemplate")
-wana:SetAttribute("type", "macro") 
-wana:SetAttribute("macrotext", aura_env.macro_1_text)
+local Wana = Wana or CreateFrame("Button", "Wana", UIParent, "SecureActionButtonTemplate")
+Wana:SetAttribute("type", "macro") 
+Wana:SetAttribute("macrotext", aura_env.macro_Wana)
+Wana:Disable()
+
+aura_env.macro_Duel = [[
+/run StartDuel("party3")
+/cast 荣誉旗帜
+]]
+local Duel = Duel or CreateFrame("Button", "Duel", UIParent, "SecureActionButtonTemplate")
+Duel:SetAttribute("type", "macro") 
+Duel:SetAttribute("macrotext", aura_env.macro_Duel)
+
 --NAME_PLATE_UNIT_ADDED
+--NAME_PLATE_UNIT_REMOVED
 function(event,nameplate)
     local guid, name = UnitGUID(nameplate), UnitName(nameplate)
     local type, zero, server_id, instance_id, zone_uid, npc_id, spawn_uid = strsplit("-",guid);
     if type == "Creature" and name == "阿克图瑞斯" then 
-        wana:SetAttribute("macrotext", aura_env.macro_2_text)
+        if event == "NAME_PLATE_UNIT_ADDED" then
+            print(event,guid, name)
+            Wana:Enable()
+        else
+            Wana:Disable()
+        end
     end
 end
 
+macro = [[
+/click Duel
+/click Wana
+]]
 
 -- Create the macro to use
 aura_env.macro_1_text = [[
 /run StartDuel("party1")
 /targetenemy
-/cast [nocombat] !假死
-/stopattack
-/cast [@focus] 压制
-/stopattack
+/cast 荣誉旗帜
 ]]
 aura_env.macro_2_text = [[
 ]]

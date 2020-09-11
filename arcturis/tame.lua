@@ -1,14 +1,17 @@
 -- 驯服
-aura_env.beast = "阿克图瑞斯"
 -- Create the macro to use
-aura_env.macro_1_text = [[
+aura_env.macro_FindPet = [[
 /cast [pet] 解散宠物
 /targetenemy
-/cast [nocombat] !假死
-/cast [nocombat] !伪装
+/cast 荣誉旗帜
 ]]
+local FindPet = FindPet or CreateFrame("Button", "FindPet", UIParent, "SecureActionButtonTemplate")
+FindPet:SetAttribute("type", "macro") 
+FindPet:SetAttribute("macrotext", aura_env.macro_FindPet)
 
-aura_env.macro_2_text = [[
+
+aura_env.macro_TamePet = [[
+/cast 荣誉旗帜
 /stopattack
 /cast 反制射击
 /stopattack
@@ -16,22 +19,38 @@ aura_env.macro_2_text = [[
 /cast [pet] 解散宠物
 ]]
 
-local tame_beast = tame_beast or CreateFrame("Button", "tame_beast", UIParent, "SecureActionButtonTemplate")
-tame_beast:SetAttribute("type", "macro") 
-tame_beast:SetAttribute("macrotext", aura_env.macro_1_text)
+local TamePet = TamePet or CreateFrame("Button", "TamePet", UIParent, "SecureActionButtonTemplate")
+TamePet:SetAttribute("type", "macro") 
+TamePet:SetAttribute("macrotext", aura_env.macro_TamePet)
+TamePet:Disable()
 
 -- UNIT_TARGET
 function(table,event,unit)
     if unit == "player" then
-        local guid, name = UnitGUID("target"), UnitName("target")
-        local type, zero, server_id, instance_id, zone_uid, npc_id, spawn_uid = strsplit("-",guid);
-        if type == "Creature" and name == aura_env.beast then
-            print(unit, guid, name)
-            tame_beast:SetAttribute("macrotext", aura_env.macro_2_text)
-            return
+        local name = UnitName("target")
+        if name == "阿克图瑞斯" then
+            print(unit, name)
+            FindPet:Disable()
+            TamePet:Enable()
         end
     end
-    if not UnitAffectingCombat("player") then
-        tame_beast:SetAttribute("macrotext", aura_env.macro_1_text)
+end
+
+macro = [[
+/run AcceptDuel()
+/click FindPet
+/click TamePet
+]]
+
+if not UnitAffectingCombat("player") then
+    tame_beast:SetAttribute("macrotext", aura_env.macro_1_text)
+end
+
+-- 重置探索敌对目标
+-- COMBAT_LOG_EVENT_UNFILTERED
+function(event, ...)
+    if UnitIsDead("target") or not UnitExists("target") or not UnitCanAttack("player", "target")then
+        TamePet:Disable()
+        FindPet:Enable() 
     end
 end
